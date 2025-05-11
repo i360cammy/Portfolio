@@ -1,17 +1,34 @@
-const buttons = document.querySelectorAll('[data-carousel-button]');
+const carousel = document.querySelector("[data-carousel]");
+const slides = carousel.querySelectorAll("[data-slides] .slide");
+const dots = carousel.querySelectorAll(".carousel-dots .dot");
+const buttons = carousel.querySelectorAll("[data-carousel-button]");
 
-buttons.forEach( button => {
+function goToSlide(index) {
+    // Guard against invalid index
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    // Update active slide
+    carousel.querySelector("[data-active]").removeAttribute("data-active");
+    slides[index].setAttribute("data-active", "");
+
+    // Update dots
+    carousel.querySelector(".carousel-dots .dot.active")?.classList.remove("active");
+    dots[index].classList.add("active");
+}
+
+// Handle nav dots
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        goToSlide(index);
+    });
+});
+
+// Handle arrows
+buttons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-        const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
-
-        const activeSlide = slides.querySelector("[data-active]");
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-
-        if (newIndex < 0) newIndex = slides.children.length -1;
-        if (newIndex >= slides.children.length) newIndex = 0;
-
-        slides.children[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-    })
-})
+        const activeIndex = [...slides].findIndex(slide => slide.hasAttribute("data-active"));
+        goToSlide(activeIndex + offset);
+    });
+});
