@@ -32,3 +32,36 @@ buttons.forEach(button => {
         goToSlide(activeIndex + offset);
     });
 });
+
+// Navigation scroll animation
+const navbar = document.querySelector("nav"); // or your specific nav selector
+const showNavBtn = document.getElementById("show-nav-btn");
+
+let lastScrollY = window.scrollY;
+let navHidden = false;
+let scrollUpDistance = 0;
+
+window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 200 && !navHidden) {
+        navbar.classList.add("nav-hidden");
+        showNavBtn.classList.add("visible");
+        navHidden = true;
+    }
+    
+    if (currentScroll < 200 && navHidden) {
+        navbar.classList.remove("nav-hidden");
+        showNavBtn.classList.remove("visible");
+        navHidden = false;
+    }
+
+    lastScrollY = currentScroll;
+});
+
+showNavBtn.addEventListener("click", () => {
+    navbar.classList.remove("nav-hidden");
+    showNavBtn.classList.remove("visible");
+    navHidden = false;
+    scrollUpDistance = 0;
+});
