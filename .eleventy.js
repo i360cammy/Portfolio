@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
     
     eleventyConfig.addPassthroughCopy('./blog/style.css');
     eleventyConfig.addPassthroughCopy('./blog/assets');
+    eleventyConfig.addPassthroughCopy('./blog/admin');
 
     eleventyConfig.addFilter('postDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
