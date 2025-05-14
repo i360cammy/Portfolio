@@ -239,11 +239,10 @@ nav.nav-hidden {
     opacity: 0;
     width: 50%;
     height: 50%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 1rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
+    border-radius: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -439,56 +438,4 @@ footer {
     padding: 2rem;
     background: #333;
     color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        padding: 1.5rem;
-    }
-
-    .nav-links {
-        display: block;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #333;
-        padding: 1rem;
-        max-height: 0;
-        transition: max-height 0.3s ease-in-out;
-        overflow: hidden;
-        z-index: 1002;
-    }
-
-    .nav-links.nav-active {
-        max-height: 500px;
-        transition: max-height 0.3s ease-in-out;
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links a {
-        padding: 1rem;
-        width: 100%;
-        display: block;
-    }
-
-    .hero {
-        height: auto;
-        padding: 4rem 1rem;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
 }
