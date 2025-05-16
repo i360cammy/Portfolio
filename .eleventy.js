@@ -2,9 +2,10 @@ const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
     
-    eleventyConfig.addPassthroughCopy('./blog/style.css');
-    eleventyConfig.addPassthroughCopy('./blog/assets');
-    eleventyConfig.addPassthroughCopy('./blog/admin');
+    eleventyConfig.addPassthroughCopy('./src/style.css');
+    eleventyConfig.addPassthroughCopy('./src/assets');
+    eleventyConfig.addPassthroughCopy('./src/admin');
+    eleventyConfig.addPassthroughCopy('./src/script.js');
 
     eleventyConfig.addFilter('postDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -12,7 +13,7 @@ module.exports = function (eleventyConfig) {
 
     return {
         dir: {
-            input: 'blog',
+            input: 'src',
             output: 'public'
         }
     }
