@@ -829,8 +829,8 @@ textarea {
 .hero-tagline {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: #f0f0f0;
-  max-width: 300px;
+  color: #d2cde8;
+  max-width: 350px;
 }
 
 .hero-greeting-name:after {

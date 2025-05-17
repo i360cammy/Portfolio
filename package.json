@@ -12,5 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i360cammy/Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i360cammy/Portfolio/issues"
+  },
+  "homepage": "https://github.com/i360cammy/Portfolio#readme"
 }
