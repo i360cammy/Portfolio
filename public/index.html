@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>example</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/blog.css">
     <script defer src="/script.js"></script>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-
 <body>
     <header>
     <nav>
@@ -39,10 +39,8 @@
 </header>
 
     <main>
-            
- 
-
-    
+        
+<link rel="stylesheet" href="/styles/homepage.css">
 <section class="hero-container">
   <div class="hero-content">
     <div class="text-stack">
@@ -65,6 +63,7 @@
                     <div class="carousel-project-card">
                         <h2>Predicting rainfall using Deep Learning</h2>
                         <p>Description of project 1</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
 
@@ -73,6 +72,7 @@
                     <div class="carousel-project-card">
                         <h2>Modelling forest response to climate change</h2>
                         <p>Description of project 2</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
 
@@ -81,6 +81,7 @@
                     <div class="carousel-project-card">
                         <h2>Project 3</h2>
                         <p>Description of project 3</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
         </ul>
@@ -108,7 +109,7 @@
 </section>
 
 <section id="about" class="about">
-    <h2>About Me</h2>
+    <h2 class="section-title">About Me</h2>
     <div class="about-content">
         <p>I am motivated by the belief that data is the key to solving many real-world problems. From forecasting hurricane tracks to improved allocation of resources for relief efforts. 
             Correct processing of observations into actionable information is crucial. </p>
@@ -119,7 +120,7 @@
 
 <section id="projects" class="projects">
 
-    <h2>My Projects</h2>
+    <h2 class="section-title">My Projects</h2>
 
         <div class="project-grid">
 
@@ -143,20 +144,19 @@
 </section>
 
 <section id="contact" class="contact">
-    <h2>Contact Me</h2>
+    <h2 class="section-title">Contact Me</h2>
     <div class="contact-content">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+            <form action="https://formsubmit.co/cammypope96@gmail.com" method="POST" id="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                
+                <input type="hidden" name="_captcha" value="true">
+                
                 <button type="submit">Send Message</button>
             </form>
         </div>
 </section>
-
-
-    
-
     </main>
 
     <footer class="site-footer">

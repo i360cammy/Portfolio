@@ -1,11 +1,9 @@
 ---
-title: example
+title: Home
 layout: 'base.njk'
 ---
-    
- 
 
-    
+<link rel="stylesheet" href="/styles/homepage.css">
 <section class="hero-container">
   <div class="hero-content">
     <div class="text-stack">
@@ -28,6 +26,7 @@ layout: 'base.njk'
                     <div class="carousel-project-card">
                         <h2>Predicting rainfall using Deep Learning</h2>
                         <p>Description of project 1</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
 
@@ -36,6 +35,7 @@ layout: 'base.njk'
                     <div class="carousel-project-card">
                         <h2>Modelling forest response to climate change</h2>
                         <p>Description of project 2</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
 
@@ -44,6 +44,7 @@ layout: 'base.njk'
                     <div class="carousel-project-card">
                         <h2>Project 3</h2>
                         <p>Description of project 3</p>
+                        <button class="project-button">Learn More</button>
                     </div>
             </li>
         </ul>
@@ -71,7 +72,7 @@ layout: 'base.njk'
 </section>
 
 <section id="about" class="about">
-    <h2>About Me</h2>
+    <h2 class="section-title">About Me</h2>
     <div class="about-content">
         <p>I am motivated by the belief that data is the key to solving many real-world problems. From forecasting hurricane tracks to improved allocation of resources for relief efforts. 
             Correct processing of observations into actionable information is crucial. </p>
@@ -82,7 +83,7 @@ layout: 'base.njk'
 
 <section id="projects" class="projects">
 
-    <h2>My Projects</h2>
+    <h2 class="section-title">My Projects</h2>
 
         <div class="project-grid">
 
@@ -106,16 +107,16 @@ layout: 'base.njk'
 </section>
 
 <section id="contact" class="contact">
-    <h2>Contact Me</h2>
+    <h2 class="section-title">Contact Me</h2>
     <div class="contact-content">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+            <form action="https://formsubmit.co/cammypope96@gmail.com" method="POST" id="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                
+                <input type="hidden" name="_captcha" value="true">
+                
                 <button type="submit">Send Message</button>
             </form>
         </div>
 </section>
-
-
-    

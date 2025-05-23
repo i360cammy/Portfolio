@@ -66,33 +66,28 @@ showNavBtn.addEventListener("click", () => {
     scrollUpDistance = 0;
 });
 
-// Mobile menu functionality
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-    
-    // Calculate and set max-height
-    if (navLinks.classList.contains('nav-active')) {
-        // Force a reflow to update the scrollHeight
-        navLinks.style.display = 'block';
-        const height = navLinks.scrollHeight;
-        navLinks.style.display = '';
-        navLinks.style.maxHeight = height + 'px';
-    } else {
-        navLinks.style.maxHeight = '0';
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault(); // stop the form from submitting normally
+  
+    const form = e.target;
+    const data = new FormData(form);
+  
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      if (response.ok) {
+        document.getElementById('form-response').style.display = 'block';
+        form.reset(); // optional: clears the form
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again later.');
     }
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    // Check if click is outside menu and not on carousel controls
-    if (!menuToggle.contains(e.target) && 
-        !navLinks.contains(e.target) &&
-        !e.target.closest('.carousel-arrow') &&
-        !e.target.closest('.carousel-indicators')) {
-        navLinks.classList.remove('nav-active');
-        navLinks.style.maxHeight = '0';
-    }
-});
+  });
